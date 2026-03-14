@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetín Central UCV</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div id="modulo-login" class="contenedor" style="display: block;">
+        <h2>Cafetín Central UCV</h2>
+        <h3>Inicio de Sesión</h3>
+        
+        <div>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" placeholder="Ej: ClienteUCV">
+        </div>
+        <br>
+        <div>
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" placeholder="Ingresa tu clave">
+        </div>
+        <br>
+        <button onclick="iniciarSesion()">Entrar</button>
+        
+        <p id="mensaje-error" style="color: red; font-weight: bold;"></p>
+    </div>
+
+    <div id="pantalla-cliente" style="display: none;">
+        <h2>Bienvenido al Cafetín Central</h2>
+        <h3 style="color: blue;" id="puntos-cliente"></h3> 
+        
+        <div style="display: flex; gap: 20px;">
+            <div style="width: 50%; border: 1px solid #ccc; padding: 10px;">
+                <h3>Catálogo de Productos</h3>
+                <div id="catalogo-cliente"></div> 
+            </div>
+
+            <div style="width: 50%; border: 1px solid #ccc; padding: 10px;">
+                <h3>Carrito de Compras (<span id="contador-carrito">0</span>)</h3>
+                <ul id="lista-carrito"></ul>
+                <h3>Subtotal: Bs. <span id="subtotal-carrito">0.00</span></h3>
+                
+                <button onclick="finalizarCompraCliente()" style="background-color: #007bff; color: white; padding: 10px;">Procesar Compra</button>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; background-color: #eef7ff; border-radius: 8px;">
+            <h3 style="color: #0056b3;">🤖 Asistente Virtual (Chatbot)</h3>
+            
+            <div id="caja-chat" style="height: 150px; overflow-y: auto; border: 1px solid #fff; background: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <p style="color: green; margin-bottom: 5px;"><strong>Bot:</strong> ¡Hola! ¿En qué te puedo ayudar sobre el Cafetín Central?</p>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="input-chat" placeholder="Ej: ¿Cuál es el horario?" style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="enviarMensajeChat()" style="background-color: #28a745;">Enviar</button>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+            <h3>Historial de Compras Anteriores</h3>
+            <ul id="historial-cliente"></ul>
+        </div>
+
+        <div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; background-color: #fff9e6; border-radius: 8px;">
+            <h3 style="color: #d39e00;">⭐ Dejar una Reseña</h3>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="nueva-resena-cliente" placeholder="¿Qué te pareció nuestro servicio/comida?..." style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="enviarResena()" style="background-color: #ffc107; color: #333; font-weight: bold;">Enviar</button>
+            </div>
+        </div>
+
+        <br>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <div id="pantalla-caja" style="display: none;">
+        <h2>Punto de Venta - Cajero</h2>
+        
+        <div style="display: flex; gap: 20px;">
+            <div style="width: 50%; border: 1px solid #ccc; padding: 10px;">
+                <h3>Menú Disponible</h3>
+                <div id="lista-productos-cajero"></div> 
+            </div>
+
+            <div style="width: 50%; border: 1px solid #ccc; padding: 10px;">
+                <h3>Pedido Actual</h3>
+                <ul id="resumen-pedido-cajero"></ul>
+                <h3>Total: Bs. <span id="total-cajero">0.00</span></h3>
+                
+                <button onclick="emitirRecibo()" style="background-color: green; color: white; padding: 10px;">Finalizar Venta</button>
+                <p id="mensaje-recibo" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+            </div>
+        </div>
+        <br>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <div id="pantalla-admin" style="display: none;">
+        <h2>Gestión del Menú - Administración</h2>
+        
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>Agregar Nuevo Producto</h3>
+            <input type="text" id="nuevo-nombre" placeholder="Nombre del producto">
+            <input type="number" id="nuevo-precio" placeholder="Precio (Ej: 15.50)">
+            <input type="text" id="nueva-img" placeholder="URL de imagen (Ej: img/foto.jpg)">
+            <button onclick="agregarProducto()">Guardar Producto</button>
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>Catálogo Actual (Eliminar Productos)</h3>
+            <ul id="lista-productos-admin"></ul> 
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>Gestión de Reseñas (Eliminar)</h3>
+            <ul id="lista-resenas-admin"></ul> 
+        </div>
+        
+        <br>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

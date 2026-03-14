@@ -1,0 +1,134 @@
+/* =========================================
+   RESETEO BÁSICO Y FUENTES
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra todo en la pantalla */
+}
+
+/* =========================================
+   CONTENEDORES PRINCIPALES (Módulos)
+========================================= */
+/* Afecta a los divs principales como el login, pantalla-cliente, etc. */
+#modulo-login, #pantalla-cliente, #pantalla-caja, #pantalla-admin {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo para que no se vea estirado en monitores grandes */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* =========================================
+   TÍTULOS Y TEXTOS
+========================================= */
+h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h3 {
+    color: #444;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* =========================================
+   FORMULARIOS Y CAJAS DE TEXTO
+========================================= */
+input[type="text"], 
+input[type="password"], 
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #004494; /* Color más oscuro al pasar el ratón */
+}
+
+/* Botones específicos (puedes sobrescribir estilos) */
+button[onclick="cerrarSesion()"] {
+    background-color: #dc3545;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button[onclick="cerrarSesion()"]:hover {
+    background-color: #c82333;
+}
+
+button[style*="color: red"] {
+    /* Estilo para los botones de eliminar del admin */
+    background-color: #fff;
+    border: 1px solid red;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+button[style*="color: red"]:hover {
+    background-color: #ffe6e6;
+}
+
+/* =========================================
+   LISTAS Y TABLEROS
+========================================= */
+ul {
+    list-style-type: none; /* Quita los puntos de las listas */
+    padding-left: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   AJUSTES A LOS CONTENEDORES DIVIDIDOS
+========================================= */
+/* Esto mejora el display:flex que pusimos directo en el HTML */
+div[style*="display: flex"] > div {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px;
+}
