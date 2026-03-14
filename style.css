@@ -1,6 +1,4 @@
-/* =========================================
-   RESETEO BÁSICO Y FUENTES
-========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,26 +11,21 @@ body {
     color: #333;
     padding: 20px;
     display: flex;
-    justify-content: center; /* Centra todo en la pantalla */
+    justify-content: center; 
 }
 
-/* =========================================
-   CONTENEDORES PRINCIPALES (Módulos)
-========================================= */
-/* Afecta a los divs principales como el login, pantalla-cliente, etc. */
+
 #modulo-login, #pantalla-cliente, #pantalla-caja, #pantalla-admin {
     background-color: #ffffff;
     width: 100%;
-    max-width: 900px; /* Ancho máximo para que no se vea estirado en monitores grandes */
+    max-width: 900px; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-/* =========================================
-   TÍTULOS Y TEXTOS
-========================================= */
+
 h2 {
     color: #0056b3;
     text-align: center;
@@ -46,9 +39,7 @@ h3 {
     padding-bottom: 5px;
 }
 
-/* =========================================
-   FORMULARIOS Y CAJAS DE TEXTO
-========================================= */
+
 input[type="text"], 
 input[type="password"], 
 input[type="number"] {
@@ -66,9 +57,7 @@ label {
     margin-bottom: 5px;
 }
 
-/* =========================================
-   BOTONES
-========================================= */
+
 button {
     background-color: #0056b3;
     color: white;
@@ -81,10 +70,10 @@ button {
 }
 
 button:hover {
-    background-color: #004494; /* Color más oscuro al pasar el ratón */
+    background-color: #004494; 
 }
 
-/* Botones específicos (puedes sobrescribir estilos) */
+
 button[onclick="cerrarSesion()"] {
     background-color: #dc3545;
     margin-top: 20px;
@@ -96,7 +85,7 @@ button[onclick="cerrarSesion()"]:hover {
 }
 
 button[style*="color: red"] {
-    /* Estilo para los botones de eliminar del admin */
+
     background-color: #fff;
     border: 1px solid red;
     padding: 5px 10px;
@@ -107,11 +96,9 @@ button[style*="color: red"]:hover {
     background-color: #ffe6e6;
 }
 
-/* =========================================
-   LISTAS Y TABLEROS
-========================================= */
+
 ul {
-    list-style-type: none; /* Quita los puntos de las listas */
+    list-style-type: none; 
     padding-left: 0;
 }
 
@@ -123,10 +110,7 @@ li {
     border-radius: 4px;
 }
 
-/* =========================================
-   AJUSTES A LOS CONTENEDORES DIVIDIDOS
-========================================= */
-/* Esto mejora el display:flex que pusimos directo en el HTML */
+
 div[style*="display: flex"] > div {
     background-color: #fafafa;
     border: 1px solid #e0e0e0 !important;
