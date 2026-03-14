@@ -50,16 +50,25 @@ function cerrarSesion() {
 }
 
 let inventario = [
-    { id: 1, nombre: "Café Grande", precio: 25.50, imagen: "imagenes/cafe.jpg" },
-    { id: 2, nombre: "Empanada de Queso", precio: 30.00, imagen: "imagenes/empanada.jpg" },
-    { id: 3, nombre: "Jugo Natural", precio: 20.00, imagen: "imagenes/jugo.jpg" }
+    { id: 1, nombre: "Empanada de carne", precio: 25.50, imagen: "imagenes/empacarne.jpg" },
+    { id: 2, nombre: "Empanada de Queso", precio: 30.00, imagen: "imagenes/empanada.jfif" },
+    { id: 3, nombre: "empanada de pollo", precio: 20.00, imagen: "imagenes/empapollo.jpg" },
+    { id: 4, nombre: "Tequeñó", precio: 35.00, imagen: "imagenes/tequeno.jpg" },
+    { id: 5, nombre: "Pastelito", precio: 30.00, imagen: "imagenes/pastelito.jfif" },
+    { id: 6, nombre: "Chocolate", precio: 45.00, imagen: "imagenes/Chocolate.jfif" },
+    { id: 7, nombre: "Coca Cola", precio: 25.00, imagen: "imagenes/refresco.jpg" },
+    { id: 8, nombre: "Agua", precio: 15.00, imagen: "imagenes/agua.jpg" },
+    { id: 9, nombre: "Galletas Cooky Chips", precio: 18.00, imagen: "imagenes/galleta.jpg" },
+    { id: 10, nombre: "Cachito de Jamón", precio: 38.00, imagen: "imagenes/cachito.jpg" },
+    { id: 11, nombre: "Pedazo de Pizza", precio: 40.00, imagen: "imagenes/pizza.jpg" },
+    { id: 12, nombre: "Malta", precio: 22.00, imagen: "imagenes/malta.jfif" }
 ];
 
 let pedidoActualCajero = [];
 
 let resenas = [
-    { id: 1, texto: "¡Las empanadas de queso son las mejores de la UCV!", autor: "Juan P." },
-    { id: 2, texto: "El café estaba un poco frío hoy.", autor: "María G." },
+    { id: 1, texto: "Las empanadas de queso son las mejores de la UCV", autor: "Juan P." },
+    { id: 2, texto: "Habia una mosca en mi cachito.", autor: "María G." },
     { id: 3, texto: "Excelente atención de los cajeros.", autor: "Carlos M." }
 ];
 
@@ -292,6 +301,11 @@ function enviarResena() {
         id: nuevoId,
         texto: texto,
         autor: "Cliente UCV" 
+    });
+
+    inputResena.value = "";
+    alert("¡Gracias por tu reseña! Ha sido enviada al sistema.");
+}
     });
 
     inputResena.value = "";
