@@ -8,21 +8,24 @@
 </head>
 <body>
     
-    <div id="modulo-login" class="contenedor" style="display: block;">
+    <div id="modulo-login" class="contenedor" style="display: block; text-align: center;">
         <h2>Cafetín Central UCV</h2>
-        <h3>Inicio de Sesión</h3>
         
-        <div>
+        <img src="imagenes/fachada.png" alt="Facultad de Ciencias UCV" style="width: 100%; max-width: 450px; border-radius: 10px; margin-bottom: 15px; border: 2px solid #ccc;">
+        
+        <h3 style="text-align: left;">Inicio de Sesión</h3>
+        
+        <div style="text-align: left;">
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" placeholder="Ej: ClienteUCV">
         </div>
         <br>
-        <div>
+        <div style="text-align: left;">
             <label for="clave">Contraseña:</label>
             <input type="password" id="clave" placeholder="Ingresa tu clave">
         </div>
         <br>
-        <button onclick="iniciarSesion()">Entrar</button>
+        <button onclick="iniciarSesion()" style="width: 100%;">Entrar</button>
         
         <p id="mensaje-error" style="color: red; font-weight: bold;"></p>
     </div>
@@ -47,7 +50,7 @@
         </div>
 
         <div style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; background-color: #eef7ff; border-radius: 8px;">
-            <h3 style="color: #0056b3;">🤖 Asistente Virtual (Chatbot)</h3>
+            <h3 style="color: #0056b3;"> Asistente Virtual (Chatbot)</h3>
             
             <div id="caja-chat" style="height: 150px; overflow-y: auto; border: 1px solid #fff; background: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
                 <p style="color: green; margin-bottom: 5px;"><strong>Bot:</strong> ¡Hola! ¿En qué te puedo ayudar sobre el Cafetín Central?</p>
