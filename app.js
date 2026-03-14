@@ -202,11 +202,18 @@ function renderizarCliente() {
 
     for (let i = 0; i < inventario.length; i++) {
         let prod = inventario[i];
+        
+        // ¡AQUÍ ESTÁ LA MAGIA! Agregamos la etiqueta <img> al HTML
         contenedorCatalogo.innerHTML += `
-            <div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-                <strong>${prod.nombre}</strong> <br>
-                Precio: Bs. ${prod.precio.toFixed(2)} <br>
-                <button onclick="agregarAlCarrito(${i})">Añadir a Carrito</button>
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                
+                <img src="${prod.imagen}" alt="${prod.nombre}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #ddd;">
+                
+                <div style="flex-grow: 1;">
+                    <strong style="font-size: 18px;">${prod.nombre}</strong> <br>
+                    <span style="color: #28a745; font-weight: bold; font-size: 16px;">Bs. ${prod.precio.toFixed(2)}</span> <br>
+                    <button onclick="agregarAlCarrito(${i})" style="margin-top: 5px; padding: 5px 10px; font-size: 14px; background-color: #ffc107; color: #333;">Añadir a Carrito</button>
+                </div>
             </div>
         `;
     }
@@ -301,11 +308,6 @@ function enviarResena() {
         id: nuevoId,
         texto: texto,
         autor: "Cliente UCV" 
-    });
-
-    inputResena.value = "";
-    alert("¡Gracias por tu reseña! Ha sido enviada al sistema.");
-}
     });
 
     inputResena.value = "";
